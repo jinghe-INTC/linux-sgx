@@ -1,0 +1,4 @@
+sgx_edger8r ../common/inc/edl/syscall.edl --trusted --search-path ../common/inc/edl/
+gcc -c poll.c -I../common/inc/internal/ -I../common/inc/ -Iinclude/tlibc/ 
+
+#rm *.o syscall_*.*

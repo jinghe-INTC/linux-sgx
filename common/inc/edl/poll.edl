@@ -1,0 +1,22 @@
+enclave {
+
+    include "bits/types.h"
+    include "bits/syscall_types.h"
+
+
+    trusted
+    {
+        public int sgx_dummy(
+            );
+    };
+
+
+    untrusted
+    {
+        int sgx_syscall_poll_ocall(
+            [in, out, count=nfds] struct sgx_host_pollfd* host_fds,
+            sgx_nfds_t nfds,
+            int timeout)
+            propagate_errno;
+    };
+};

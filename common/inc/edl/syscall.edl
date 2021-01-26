@@ -1,0 +1,13 @@
+enclave {
+
+    //from "epoll.edl" import *;
+    //from "fcntl.edl" import *;
+    //from "ioctl.edl" import *;
+    from "poll.edl" import *;
+    //from "signal.edl" import *;
+    //from "socket.edl" import *;
+    //from "time.edl" import *;
+    //from "unistd.edl" import *;
+    //from "utsname.edl" import *;
+};
+
