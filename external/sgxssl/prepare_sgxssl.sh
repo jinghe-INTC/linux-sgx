@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (C) 2011-2020 Intel Corporation. All rights reserved.
+# Copyright (C) 2011-2021 Intel Corporation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -32,7 +32,7 @@
 
 top_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 openssl_out_dir=$top_dir/openssl_source
-openssl_ver=1.1.1i
+openssl_ver=1.1.1j
 openssl_ver_name=openssl-$openssl_ver
 sgxssl_github_archive=https://github.com/intel/intel-sgx-ssl/archive
 sgxssl_ver=2.13
@@ -43,7 +43,7 @@ server_url_path=https://www.openssl.org/source
 full_openssl_url=$server_url_path/old/1.1.1/$openssl_ver_name.tar.gz
 
 sgxssl_chksum=95997e75d0ea09e525626ce3812bbd3dd972382a20a989bcf1c3acb9746d2a23
-openssl_chksum=e8be6a35fe41d10603c3cc635e93289ed00bf34b79671a3a4de64fcee00d5242
+openssl_chksum=aaf2fcb575cdf6491b98ab4829abf78a3dec8402b8b81efc8f23c00d443981bf
 rm -f check_sum_sgxssl.txt check_sum_openssl.txt
 if [ ! -f $build_script ]; then
 	wget $sgxssl_github_archive/$sgxssl_file_name.zip -P $top_dir || exit 1
