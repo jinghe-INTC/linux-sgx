@@ -20,4 +20,4 @@ jobs:
     - name: install tools
       run: sudo apt-get install ocaml ocamlbuild
     - name: build sdk
-      run: make preparation ; make sdk_install_pkg_no_mitigation
+      run: make preparation ; USE_OPT_LIBS=0 make sdk_install_pkg_no_mitigation
