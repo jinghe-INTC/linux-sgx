@@ -21,6 +21,6 @@ jobs:
     steps:
     - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
     - name: install ocaml
-      run: apt-get install ocaml ocamlbuild 
+      run: sudo apt-get install ocaml ocamlbuild 
     - name: build SDK
       run: make preparation ; make sdk_install_pkg
