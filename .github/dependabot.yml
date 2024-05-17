@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /docker/build
+    schedule:
+      interval: daily
+
+  - package-ecosystem: pip
+    directory: /external/CppMicroServices/doc
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /linux/installer/docker
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /linux/reproducibility
+    schedule:
+      interval: daily
