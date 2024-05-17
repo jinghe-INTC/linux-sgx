@@ -28,7 +28,7 @@
 #
 
 
-FROM ubuntu:22.04 as builder
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e57fd7aec21dd0d1b0761bbfb2 as builder
 
 RUN apt-get update && apt-get install  -y \
     autoconf \
@@ -74,7 +74,7 @@ RUN make psw_install_pkg
 ENV BUILD_PLATFORM="docker"
 RUN make deb_local_repo
 
-FROM ubuntu:22.04 as aesm
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e57fd7aec21dd0d1b0761bbfb2 as aesm
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libprotobuf-dev \
@@ -88,7 +88,7 @@ WORKDIR /opt/intel/sgxpsw/aesm/
 ENV LD_LIBRARY_PATH=.
 CMD ./aesm_service --no-daemon
 
-FROM ubuntu:22.04 as aesm_deb
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e57fd7aec21dd0d1b0761bbfb2 as aesm_deb
 RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libprotobuf-dev \
@@ -107,7 +107,7 @@ ENV LD_LIBRARY_PATH=.
 CMD ./aesm_service --no-daemon
 
 
-FROM ubuntu:22.04 as sample
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e57fd7aec21dd0d1b0761bbfb2 as sample
 RUN apt-get update && apt-get install -y \
     g++ \
     libcurl4-openssl-dev \
@@ -129,7 +129,7 @@ USER sgxuser
 CMD ./app
 
 
-FROM ubuntu:22.04 as sample_deb
+FROM ubuntu:22.04@sha256:a6d2b38300ce017add71440577d5b0a90460d0e57fd7aec21dd0d1b0761bbfb2 as sample_deb
 RUN apt-get update && apt-get install -y \
     g++ \
     libcurl4-openssl-dev \
